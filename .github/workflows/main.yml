@@ -1,0 +1,33 @@
+name: Pipeline CI/CD Grupo02
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  pipeline:
+
+    runs-on: ubuntu-latest
+
+
+    steps:
+     - name: Checkout do Código
+       uses: actions/checkout@v4
+
+     - name: Instalação do Python
+       uses: actions/setup-python@v5
+       with:
+        python-version: '3.13'
+
+     - name: build
+       run: |
+          python --version
+          echo "Preparando a aplicação..."
+
+     - name: teste
+       run: |
+          echo "Executando testes..."
+          python -m unittest discover -s tests -v
+
+     - name: Deploy
+       run:   echo "Realizando o Deploy sem nuvem" 
