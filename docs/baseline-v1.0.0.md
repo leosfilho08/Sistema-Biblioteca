@@ -24,7 +24,6 @@ Este documento estabelece a baseline formal da versão 1.0.0 do Sistema de Bibli
 | `tests/test_main.py` | Teste | 1.0.0 | Suíte de testes unitários com *mocks* de I/O. |
 | `tests/__init__.py` | Configuração | 1.0.0 | Identificador de pacote para descoberta automática de testes. |
 | `.github/workflows/main.yml` | CI/CD | 1.0.0 | Automação de build, testes e deploy no GitHub. |
-| `.gitlab-ci.yml` | CI/CD | 1.0.0 | Automação de build, testes e deploy no GitLab. |
 | `README.md` | Documentação | Atual | Guia de execução e estrutura do repositório. |
 
 ---
