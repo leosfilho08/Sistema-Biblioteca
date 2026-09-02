@@ -42,7 +42,7 @@ Este documento estabelece a baseline formal da versão 1.0.0 do Sistema de Bibli
 
 * **Linguagem:** Python 3.13
 * **Framework de Testes:** `unittest` (nativo)
-* **Ferramentas de CI/CD:** GitHub Actions e GitLab CI/CD
+* **Ferramenta de CI/CD:** GitHub Actions
 * **Dependências Externas:** Nenhuma (utiliza apenas a biblioteca padrão do Python)
 
 ---
