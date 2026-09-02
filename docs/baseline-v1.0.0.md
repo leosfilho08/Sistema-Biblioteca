@@ -23,7 +23,7 @@ Este documento estabelece a baseline formal da versão 1.0.0 do Sistema de Bibli
 | `devolucoes.py` | Código Fonte | 1.0.0 | Módulo de controle e processo de devolução. |
 | `tests/test_main.py` | Teste | 1.0.0 | Suíte de testes unitários com *mocks* de I/O. |
 | `tests/__init__.py` | Configuração | 1.0.0 | Identificador de pacote para descoberta automática de testes. |
-| `.github/workflows/main.yml` | CI/CD | 1.0.0 | Automação de build, testes e deploy no GitHub. |
+| `.github/workflows/pipeline.yml` | CI/CD | 1.0.0 | Automação de build, testes e deploy no GitHub. |
 | `README.md` | Documentação | Atual | Guia de execução e estrutura do repositório. |
 
 ---
