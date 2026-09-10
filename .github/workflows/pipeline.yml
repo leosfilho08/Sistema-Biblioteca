@@ -6,28 +6,42 @@ on:
 
 jobs:
   pipeline:
-
     runs-on: ubuntu-latest
 
-
     steps:
-     - name: Checkout do Código
-       uses: actions/checkout@v4
+      - name: Checkout do Código
+        uses: actions/checkout@v4
 
-     - name: Instalação do Python
-       uses: actions/setup-python@v5
-       with:
-        python-version: '3.13'
+      - name: Instalação do Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
 
-     - name: build
-       run: |
+      - name: Build
+        run: |
           python --version
+          python -m pip install --upgrade pip
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
           echo "Preparando a aplicação..."
 
-     - name: teste
-       run: |
+      - name: Security Gate (Bandit)
+        run: |
+          pip install bandit
+          if [ -f tests/requirements.txt ]; then pip install -r tests/requirements.txt; fi
+          if [ -f test/requirements.txt ]; then pip install -r test/requirements.txt; fi
+          echo "Executando análise estática de segurança com Bandit..."
+          bandit -r . -x ./test -x ./tests
+
+      - name: Security Gate (pip-audit)
+        run: |
+          pip install pip-audit
+          echo "Auditando dependências com pip-audit..."
+          if [ -f requirements.txt ]; then pip-audit -r requirements.txt; fi
+
+      - name: Teste
+        run: |
           echo "Executando testes..."
           python -m unittest discover -s test -p "test_*.py" -v
 
-     - name: Deploy
-       run:   echo "Realizando o Deploy sem nuvem" 
+      - name: Deploy
+        run: echo "Realizando o Deploy sem nuvem"
