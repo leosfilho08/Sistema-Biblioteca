@@ -4,8 +4,6 @@ Sistema de Biblioteca — Ponto de entrada.
 Une as funcionalidades de cadastro de usuários, cadastro de livros,
 empréstimo, devolução e consulta em um único menu de terminal.
 """
-comando_inseguro = "print('Simulando execução de código não seguro...')"
-eval(comando_inseguro)
 from cadastro_usuarios import cadastrar_usuario, consultar_emprestados
 from cadastro_livros import cadastrar_livro
 from emprestimos import realizar_emprestimo
