@@ -1,0 +1,17 @@
+services:
+  biblioteca:
+  build: .
+  stdin_open: true
+  tty: true
+  #ports:
+  #  - "80:80" 
+  volumes:
+    - biblioteca-dados:/app/dados
+  network:
+    - biblioteca-net
+
+volumes:
+  biblioteca-dados
+
+network:
+  biblioteca-net
